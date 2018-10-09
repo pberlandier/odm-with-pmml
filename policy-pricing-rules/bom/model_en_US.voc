@@ -1,0 +1,43 @@
+# Vocabulary Properties
+com.acme.renewal.Application.renew#phrase.action = make it {renew} that {this} is renew
+com.acme.renewal.Application.renew#phrase.navigation = {this} is renew
+uuid = 612e4b2c-8d6d-4193-a6dc-b50a4749547f
+
+# com.acme.renewal.Application
+com.acme.renewal.Application#concept.label = application
+com.acme.renewal.Application.claimCost#phrase.action = set the claim cost of {this} to {claim cost}
+com.acme.renewal.Application.claimCost#phrase.navigation = {claim cost} of {this}
+com.acme.renewal.Application.claimCostSurcharge#phrase.action = set the claim cost surcharge of {this} to {claim cost surcharge}
+com.acme.renewal.Application.claimCostSurcharge#phrase.navigation = {claim cost surcharge} of {this}
+com.acme.renewal.Application.costFactor#phrase.action = set the cost factor of {this} to {cost factor}
+com.acme.renewal.Application.costFactor#phrase.navigation = {cost factor} of {this}
+com.acme.renewal.Application.eligible#phrase.action = make it {eligible} that {this} is eligible
+com.acme.renewal.Application.eligible#phrase.navigation = {this} is eligible
+com.acme.renewal.Application.price#phrase.action = set the price of {this} to {price}
+com.acme.renewal.Application.price#phrase.navigation = {price} of {this}
+com.acme.renewal.Application.primaryClassCode#phrase.action = set the primary class code of {this} to {primary class code}
+com.acme.renewal.Application.primaryClassCode#phrase.navigation = {primary class code} of {this}
+com.acme.renewal.Application.printOutcome()#phrase.action = print the outcome of {this}
+com.acme.renewal.Application.youthful#phrase.action = make it {youthful} that {this} is youthful
+com.acme.renewal.Application.youthful#phrase.navigation = {this} is youthful
+
+# com.acme.renewal.Car
+com.acme.renewal.Car#concept.label = car
+com.acme.renewal.Car.age#phrase.navigation = {age} of {this}
+com.acme.renewal.Car.numberOfClaims#phrase.navigation = {number of claims} of {this}
+
+# com.acme.renewal.Driver
+com.acme.renewal.Driver#concept.label = driver
+com.acme.renewal.Driver.age#phrase.navigation = {age} of {this}
+com.acme.renewal.Driver.awayToSchool#phrase.navigation = {this} is away to school
+com.acme.renewal.Driver.gender#phrase.navigation = {gender} of {this}
+com.acme.renewal.Driver.livingArea#phrase.navigation = {living area} of {this}
+com.acme.renewal.Driver.maritalStatus#phrase.navigation = {marital status} of {this}
+com.acme.renewal.Driver.newClient#phrase.navigation = {this} is new client
+com.acme.renewal.Driver.owner#phrase.navigation = {this} is owner
+com.acme.renewal.Driver.principalOperator#phrase.navigation = {this} is principal operator
+
+# com.acme.renewal.predictors.ClaimAmountPredictor
+com.acme.renewal.predictors.ClaimAmountPredictor#concept.label = claim amount predictor
+com.acme.renewal.predictors.ClaimAmountPredictor.CreatePredictor(java.lang.String)#phrase.navigation = a predictor based on {0}
+com.acme.renewal.predictors.ClaimAmountPredictor.evaluate(java.lang.String,int,java.lang.String,double)#phrase.navigation = the estimated claim amount using {this}, based on {0}, {1}, {2}, {3}

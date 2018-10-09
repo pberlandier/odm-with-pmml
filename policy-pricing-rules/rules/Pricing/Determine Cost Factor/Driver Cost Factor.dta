@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Driver Cost Factor</name>
+  <uuid>cc142d79-4dcc-4678-815c-d2087ef37f44</uuid>
+  <documentation><![CDATA[Removed primary class codes that end with 'F' as those belong to FARM insurance and is not being implemented currently.]]></documentation>
+  <priority></priority>
+  <locale>en_US</locale>
+  <definition>
+<DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+  <Body>
+    <Properties>
+      <Property Name="edit.Check.Expression" Type="xs:boolean"><![CDATA[true]]></Property>
+      <Property Name="edit.Check.Gap" Type="xs:boolean"><![CDATA[true]]></Property>
+      <Property Name="edit.Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+      <Property Name="edit.Check.Symmetry" Type="xs:boolean"><![CDATA[false]]></Property>
+      <Property Name="tmpCheck.edit.Check.Expression" Type="xs:boolean"><![CDATA[true]]></Property>
+      <Property Name="tmpCheck.edit.Check.Gap" Type="xs:boolean"><![CDATA[true]]></Property>
+      <Property Name="tmpCheck.edit.Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+      <Property Name="tmpCheck.edit.Check.Symmetry" Type="xs:boolean"><![CDATA[false]]></Property>
+    </Properties>
+    <Structure>
+      <ConditionDefinitions>
+        <ConditionDefinition Id="C0">
+          <ExpressionDefinition>
+            <Text><![CDATA[the primary class code of application is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+      </ConditionDefinitions>
+      <ActionDefinitions>
+        <ActionDefinition Id="A0">
+          <ExpressionDefinition>
+            <Text><![CDATA[set the cost factor of application to <a number>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+      </ActionDefinitions>
+    </Structure>
+    <Contents>
+      <Partition DefId="C0">
+        <Condition>
+          <Expression>
+            <Param><![CDATA["6A"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[2.05]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["6B"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.74]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["4A"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.55]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["5A"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.55]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["3B"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.36]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["8A"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.35]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["4B"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.3]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["5B"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.3]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["7A"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.25]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["3A"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.22]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["8B"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.15]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["9"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.1]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["1B"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.04]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["1C"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.09]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["7B"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1.05]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["1A"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["1AS"]]></Param>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[0.95]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Otherwise/>
+          </Expression>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression>
+                <Param><![CDATA[1]]></Param>
+              </Expression>
+            </Action>
+          </ActionSet>
+        </Condition>
+      </Partition>
+    </Contents>
+  </Body>
+  <Resources DefaultLocale="en_US">
+    <ResourceSet Locale="en_US">
+      <Data Name="Definitions(A0)#HeaderText"><![CDATA[cost factor]]></Data>
+      <Data Name="Definitions(A0)#Width"><![CDATA[617]]></Data>
+      <Data Name="Definitions(C0)#HeaderText"><![CDATA[primary class code]]></Data>
+      <Data Name="Definitions(C0)#Width"><![CDATA[618]]></Data>
+    </ResourceSet>
+  </Resources>
+</DT></definition>
+</ilog.rules.studio.model.dt:DecisionTable>

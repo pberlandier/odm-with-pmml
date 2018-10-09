@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>variables</name>
+  <uuid>f5a4b3ea-0066-4f2f-abaa-49a0e5486fb8</uuid>
+  <variables name="predictor" type="com.acme.renewal.predictors.ClaimAmountPredictor" initialValue="" verbalization="predictor"/>
+  <variables name="car" type="com.acme.renewal.Car" initialValue="" verbalization="car"/>
+  <variables name="driver" type="com.acme.renewal.Driver" initialValue="" verbalization="driver"/>
+  <variables name="application" type="com.acme.renewal.Application" initialValue="new com.acme.renewal.Application()" verbalization="application"/>
+</ilog.rules.studio.model.base:VariableSet>

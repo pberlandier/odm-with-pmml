@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Adjust for Past Claim Cost</name>
+  <uuid>a61f0dff-f09d-4db2-b340-3a21a24330c9</uuid>
+</ilog.rules.studio.model.base:RulePackage>

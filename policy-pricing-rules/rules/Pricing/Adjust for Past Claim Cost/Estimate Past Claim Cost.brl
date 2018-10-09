@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Estimate Past Claim Cost</name>
+  <uuid>fa2ac447-2455-453b-910b-5440cc7ad7d5</uuid>
+  <priority>high</priority>
+  <locale>en_US</locale>
+  <definition><![CDATA[then
+	set the claim cost of application 
+		to the estimated claim amount using predictor , based on 
+			the gender of driver , 
+			the number of claims of car , 
+			the living area of driver , 
+			the age of car ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

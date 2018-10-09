@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Compute Policy Price</name>
+  <uuid>1c14f2fc-9e5b-473b-9414-b23bab588a3e</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	application is eligible
+then
+	set the price of application to
+		1200 * ( the cost factor of application + the claim cost surcharge of application ) ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

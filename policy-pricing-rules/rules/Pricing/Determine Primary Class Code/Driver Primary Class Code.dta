@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Driver Primary Class Code</name>
+  <uuid>92183761-425c-448c-b709-8c0f3f5d8607</uuid>
+  <priority></priority>
+  <locale>en_US</locale>
+  <definition>
+<DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+  <Body>
+    <Properties>
+      <Property Name="Check.Gap.ErrorLevel">Info</Property>
+    </Properties>
+    <Structure>
+      <ConditionDefinitions>
+        <ConditionDefinition Id="C0">
+          <ExpressionDefinition>
+            <Text><![CDATA[the gender of driver is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C1">
+          <ExpressionDefinition>
+            <Text><![CDATA[the marital status of driver is <an object>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C2">
+          <ExpressionDefinition>
+            <Text><![CDATA[the age of driver is between <min> and <max>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C6">
+          <ExpressionDefinition>
+            <Text><![CDATA[driver is principal operator is <an object>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C5">
+          <ExpressionDefinition>
+            <Text><![CDATA[driver is owner is <an object>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C4">
+          <ExpressionDefinition>
+            <Text><![CDATA[driver is away to school is <a boolean>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+      </ConditionDefinitions>
+      <ActionDefinitions>
+        <ActionDefinition Id="A1">
+          <ExpressionDefinition>
+            <Text><![CDATA[set the primary class code of application to <a string>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A0">
+          <ExpressionDefinition>
+            <Text><![CDATA[make it <a boolean>  that application is youthful]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+      </ActionDefinitions>
+    </Structure>
+    <Contents>
+      <Partition DefId="C0">
+        <Condition>
+          <Expression>
+            <Param><![CDATA["female"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA["single"]]></Param>
+              </Expression>
+              <Partition DefId="C2">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[18]]></Param>
+                    <Param><![CDATA[20]]></Param>
+                  </Expression>
+                  <Partition DefId="C6">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[true]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["8A"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA[true]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[false]]></Param>
+                      </Expression>
+                      <Partition DefId="C5">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[true]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["8A"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA[true]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[false]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["7A"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA[true]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[21]]></Param>
+                    <Param><![CDATA[24]]></Param>
+                  </Expression>
+                  <Partition DefId="C6">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[true]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["8B"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA[true]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[false]]></Param>
+                      </Expression>
+                      <Partition DefId="C5">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[true]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["8B"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA[true]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[false]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["7B"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA[true]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[25]]></Param>
+                    <Param><![CDATA[100]]></Param>
+                  </Expression>
+                  <ActionSet>
+                    <Action DefId="A1">
+                      <Expression>
+                        <Param><![CDATA["1A"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A0">
+                      <Expression>
+                        <Param><![CDATA[false]]></Param>
+                      </Expression>
+                    </Action>
+                  </ActionSet>
+                </Condition>
+              </Partition>
+            </Condition>
+            <Condition>
+              <Expression>
+                <Param><![CDATA["married"]]></Param>
+              </Expression>
+              <Partition DefId="C2">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[18]]></Param>
+                    <Param><![CDATA[100]]></Param>
+                  </Expression>
+                  <ActionSet>
+                    <Action DefId="A1">
+                      <Expression>
+                        <Param><![CDATA["1A"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A0">
+                      <Expression>
+                        <Param><![CDATA[false]]></Param>
+                      </Expression>
+                    </Action>
+                  </ActionSet>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["male"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA["single"]]></Param>
+              </Expression>
+              <Partition DefId="C2">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[18]]></Param>
+                    <Param><![CDATA[20]]></Param>
+                  </Expression>
+                  <Partition DefId="C6">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[true]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["6A"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA[true]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[false]]></Param>
+                      </Expression>
+                      <Partition DefId="C5">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[true]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["6A"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA[true]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[false]]></Param>
+                          </Expression>
+                          <Partition DefId="C4">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[true]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A1">
+                                  <Expression>
+                                    <Param><![CDATA["5A"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA[true]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[false]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A1">
+                                  <Expression>
+                                    <Param><![CDATA["4A"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA[true]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[21]]></Param>
+                    <Param><![CDATA[24]]></Param>
+                  </Expression>
+                  <Partition DefId="C6">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[true]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["6B"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA[true]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[false]]></Param>
+                      </Expression>
+                      <Partition DefId="C5">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[true]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["6B"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA[true]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[false]]></Param>
+                          </Expression>
+                          <Partition DefId="C4">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[true]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A1">
+                                  <Expression>
+                                    <Param><![CDATA["5B"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA[true]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[false]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A1">
+                                  <Expression>
+                                    <Param><![CDATA["4B"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA[true]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[25]]></Param>
+                    <Param><![CDATA[29]]></Param>
+                  </Expression>
+                  <Partition DefId="C6">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[true]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["9"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA[true]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[false]]></Param>
+                      </Expression>
+                      <Partition DefId="C5">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[true]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["9"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA[true]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[false]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["1A"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA[true]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[30]]></Param>
+                    <Param><![CDATA[100]]></Param>
+                  </Expression>
+                  <ActionSet>
+                    <Action DefId="A1">
+                      <Expression>
+                        <Param><![CDATA["1A"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A0">
+                      <Expression>
+                        <Param><![CDATA[false]]></Param>
+                      </Expression>
+                    </Action>
+                  </ActionSet>
+                </Condition>
+              </Partition>
+            </Condition>
+            <Condition>
+              <Expression>
+                <Param><![CDATA["married"]]></Param>
+              </Expression>
+              <Partition DefId="C2">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[18]]></Param>
+                    <Param><![CDATA[20]]></Param>
+                  </Expression>
+                  <ActionSet>
+                    <Action DefId="A1">
+                      <Expression>
+                        <Param><![CDATA["4A"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A0">
+                      <Expression>
+                        <Param><![CDATA[true]]></Param>
+                      </Expression>
+                    </Action>
+                  </ActionSet>
+                </Condition>
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[21]]></Param>
+                    <Param><![CDATA[24]]></Param>
+                  </Expression>
+                  <ActionSet>
+                    <Action DefId="A1">
+                      <Expression>
+                        <Param><![CDATA["4B"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A0">
+                      <Expression>
+                        <Param><![CDATA[true]]></Param>
+                      </Expression>
+                    </Action>
+                  </ActionSet>
+                </Condition>
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[25]]></Param>
+                    <Param><![CDATA[29]]></Param>
+                  </Expression>
+                  <Partition DefId="C6">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[true]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["1A"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA[false]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[false]]></Param>
+                      </Expression>
+                      <Partition DefId="C5">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[true]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["9"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA[true]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[false]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["1A"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA[false]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[30]]></Param>
+                    <Param><![CDATA[100]]></Param>
+                  </Expression>
+                  <ActionSet>
+                    <Action DefId="A1">
+                      <Expression>
+                        <Param><![CDATA["1A"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A0">
+                      <Expression>
+                        <Param><![CDATA[false]]></Param>
+                      </Expression>
+                    </Action>
+                  </ActionSet>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+      </Partition>
+    </Contents>
+  </Body>
+  <Resources DefaultLocale="en_US">
+    <ResourceSet Locale="en_US">
+      <Data Name="Definitions(A0)#HeaderText"><![CDATA[youthful]]></Data>
+      <Data Name="Definitions(A0)#Width"><![CDATA[161]]></Data>
+      <Data Name="Definitions(A1)#HeaderText"><![CDATA[class code]]></Data>
+      <Data Name="Definitions(A1)#Width"><![CDATA[147]]></Data>
+      <Data Name="Definitions(C0)#HeaderText"><![CDATA[gender]]></Data>
+      <Data Name="Definitions(C0)#Width"><![CDATA[163]]></Data>
+      <Data Name="Definitions(C1)#HeaderText"><![CDATA[marital status]]></Data>
+      <Data Name="Definitions(C1)#Width"><![CDATA[163]]></Data>
+      <Data Name="Definitions(C2)#HeaderText"><![CDATA[age]]></Data>
+      <Data Name="Definitions(C2)#Width"><![CDATA[163]]></Data>
+      <Data Name="Definitions(C4)#HeaderText"><![CDATA[away to school]]></Data>
+      <Data Name="Definitions(C4)#Width"><![CDATA[143]]></Data>
+      <Data Name="Definitions(C5)#HeaderText"><![CDATA[owner]]></Data>
+      <Data Name="Definitions(C5)#Width"><![CDATA[144]]></Data>
+      <Data Name="Definitions(C6)#HeaderText"><![CDATA[principal operator]]></Data>
+      <Data Name="Definitions(C6)#Width"><![CDATA[151]]></Data>
+    </ResourceSet>
+  </Resources>
+</DT></definition>
+</ilog.rules.studio.model.dt:DecisionTable>

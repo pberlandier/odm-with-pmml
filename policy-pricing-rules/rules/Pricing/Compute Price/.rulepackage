@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Compute Price</name>
+  <uuid>32d423f5-1eda-4726-8b22-b357e17efeaa</uuid>
+</ilog.rules.studio.model.base:RulePackage>

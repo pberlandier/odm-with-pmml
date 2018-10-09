@@ -1,0 +1,52 @@
+
+property loadGetterSetterAsProperties "true"
+property origin "xom:/policy-pricing-rules//policy-pricing-xom"
+property uuid "8a6e4537-bc42-4290-9566-af9691ccf396"
+package com.acme.renewal;
+
+
+public class Application
+{
+    public int claimCost;
+    public double claimCostSurcharge;
+    public double costFactor;
+    public boolean eligible;
+    public double price;
+    public string primaryClassCode;
+    public boolean youthful;
+    public Application();
+    public void printOutcome();
+}
+
+public class Car
+{
+    public int age;
+    public int numberOfClaims;
+    public Car();
+}
+
+public class Driver
+{
+    public int age;
+    public boolean awayToSchool;
+    public string gender;
+    public string livingArea;
+    public string maritalStatus;
+    public boolean newClient;
+    public boolean owner;
+    public boolean principalOperator;
+    public Driver();
+    public string toString();
+}
+
+package com.acme.renewal.predictors;
+
+
+public class ClaimAmountPredictor
+{
+    public ClaimAmountPredictor(string arg)
+                throws java.io.IOException, org.xml.sax.SAXException, javax.xml.bind.JAXBException;
+    public static com.acme.renewal.predictors.ClaimAmountPredictor CreatePredictor(string arg);
+    public double evaluate(string arg1, int arg2, string arg3, double arg4);
+}
+
