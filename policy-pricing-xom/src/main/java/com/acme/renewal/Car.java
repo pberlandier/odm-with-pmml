@@ -1,5 +1,9 @@
 package com.acme.renewal;
 
+/**
+ * @author pberland@us.ibm.com
+ *
+ */
 public class Car {
 	int numberOfClaims;
 	int age;

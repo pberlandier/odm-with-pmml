@@ -19,7 +19,6 @@ set predictor to a predictor based on "neural_insurance.pmml" ;]]></Actions>
         </RuleList>
       </RuleTask>
       <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="Adjust for Past Claim Cost" Ordering="Default">
-        <InitialActions/>
         <FinalActions Language="irl"><![CDATA[if ( application.eligible ) {]]>&#13;<![CDATA[
 	java.lang.System.out.println("Surcharge based on past claims cost estimate is " + application.claimCostSurcharge); ]]>&#13;<![CDATA[
 }]]>&#13;<![CDATA[
@@ -41,9 +40,7 @@ else {]]>&#13;<![CDATA[
           <Package Name="Pricing.Compute Price"/>
         </RuleList>
       </RuleTask>
-      <StopTask Identifier="task_1">
-        <Actions/>
-      </StopTask>
+      <StopTask Identifier="task_1"/>
     </TaskList>
     <NodeList>
       <TaskNode Identifier="node_0" Task="task_0"/>

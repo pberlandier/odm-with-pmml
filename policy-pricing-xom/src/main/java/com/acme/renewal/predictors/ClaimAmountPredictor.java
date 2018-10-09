@@ -20,6 +20,10 @@ import org.jpmml.model.JAXBUtil;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+/**
+ * @author pberland@us.ibm.com
+ *
+ */
 public class ClaimAmountPredictor {
 
 	Evaluator evaluator;

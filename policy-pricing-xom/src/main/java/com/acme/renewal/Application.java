@@ -1,5 +1,9 @@
 package com.acme.renewal;
 
+/**
+ * @author pberland@us.ibm.com
+ *
+ */
 public class Application {
 	private boolean isEligible;
 	private double price;

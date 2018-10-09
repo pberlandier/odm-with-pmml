@@ -2,6 +2,10 @@ package com.acme.renewal;
 
 import java.lang.String;
 
+/**
+ * @author pberland@us.ibm.com
+ *
+ */
 public class Driver {
 	private int age;
 	private String gender;
@@ -11,21 +15,6 @@ public class Driver {
 	private boolean isOwner;
 	private boolean isAwayToSchool;
 	private boolean isNewClient;
-
-	/*
-	public Driver(String gender, String maritalStatus, String livingArea,
-			int age, boolean isPrincipalOperator, boolean isOwner,
-			boolean isAwayToSchool, boolean isNewClient) {
-		this.gender = gender;
-		this.maritalStatus = maritalStatus;
-		this.livingArea = livingArea;
-		this.age = age;
-		this.isPrincipalOperator = isPrincipalOperator;
-		this.isOwner = isOwner;
-		this.isAwayToSchool = isAwayToSchool;
-		this.isNewClient = isNewClient;
-	}
-	*/
 
 	public void setAge(int age) {
 		this.age = age;
@@ -90,10 +79,4 @@ public class Driver {
 	public boolean isNewClient() {
 		return isNewClient;
 	}
-
-	@Override
-	public String toString() {
-		return gender + ", living in a " + livingArea + " area";
-	}
-
 }
