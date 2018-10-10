@@ -10,5 +10,7 @@
 			the gender of driver , 
 			the number of claims of car , 
 			the living area of driver , 
-			the age of car ;]]></definition>
+			the age of car ;
+			
+			]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>
