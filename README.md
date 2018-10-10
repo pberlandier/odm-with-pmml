@@ -5,4 +5,4 @@ It shows a simple auto insurance pricing process using a simple tiering rule to 
 
 The predictive model is a simple Neural Network that is defined using [PMML](http://dmg.org/pmml/v4-3/GeneralStructure.html), and integrated in the ODM project XOM via the [JPMML](https://github.com/jpmml) library.
 
-A quick intro to the sample is provided in [this deck](https://github.com/pberlandier/odm-with-pmml/master/docs/Decisions%20with%20ODM%20and%20Predictive%20Model.pptx).
+A quick intro to the sample is provided in [this deck](https://github.com/pberlandier/odm-with-pmml/blob/master/docs/Decisions%20with%20ODM%20and%20Predictive%20Model.pptx).
