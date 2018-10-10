@@ -1,0 +1,17 @@
+// Car
+com.acme.renewal.Car result = new com.acme.renewal.Car();
+result.numberOfClaims = 3;
+result.age = 10;
+return result;
+
+// Driver
+com.acme.renewal.Driver result = new com.acme.renewal.Driver();
+result.age = 19;
+result.gender = "male";
+result.maritalStatus = "single";
+result.livingArea = "urban";
+result.principalOperator = false;
+result.owner = false;
+result.awayToSchool = true;
+result.newClient = true;
+return result;

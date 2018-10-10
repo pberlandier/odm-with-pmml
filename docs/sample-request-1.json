@@ -1,0 +1,16 @@
+{
+  "driver": {
+    "age": 19,
+    "gender": "male",
+    "maritalStatus": "single",
+    "livingArea": "urban",
+    "principalOperator": true,
+    "owner": false,
+    "awayToSchool": true,
+    "newClient": true
+  },
+  "car": {
+    "numberOfClaims": 3,
+    "age": 10
+  }
+}
