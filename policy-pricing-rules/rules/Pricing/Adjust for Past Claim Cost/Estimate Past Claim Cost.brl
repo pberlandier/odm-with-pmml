@@ -4,7 +4,9 @@
   <uuid>fa2ac447-2455-453b-910b-5440cc7ad7d5</uuid>
   <priority>high</priority>
   <locale>en_US</locale>
-  <definition><![CDATA[then
+  <definition><![CDATA[if
+	predictor is not null 
+then
 	set the claim cost of application 
 		to the estimated claim amount using predictor , based on 
 			the gender of driver , 

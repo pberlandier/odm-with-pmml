@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
-  <name>Driver Cost Factor</name>
+  <name>Driver Base Cost Factor</name>
   <uuid>cc142d79-4dcc-4678-815c-d2087ef37f44</uuid>
   <documentation><![CDATA[Removed primary class codes that end with 'F' as those belong to FARM insurance and is not being implemented currently.]]></documentation>
   <priority></priority>
   <locale>en_US</locale>
   <definition>
-<DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+<DT Version="7.0" xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable">
   <Body>
     <Properties>
       <Property Name="edit.Check.Expression" Type="xs:boolean"><![CDATA[true]]></Property>

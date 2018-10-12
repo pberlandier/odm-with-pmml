@@ -6,4 +6,5 @@
   <variables name="car" type="com.acme.renewal.Car" initialValue="" verbalization="car"/>
   <variables name="driver" type="com.acme.renewal.Driver" initialValue="" verbalization="driver"/>
   <variables name="application" type="com.acme.renewal.Application" initialValue="new com.acme.renewal.Application()" verbalization="application"/>
+  <variables name="modelName" type="java.lang.String" initialValue="" verbalization="model name"/>
 </ilog.rules.studio.model.base:VariableSet>

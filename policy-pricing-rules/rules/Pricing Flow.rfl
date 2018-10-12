@@ -10,23 +10,12 @@
     <TaskList>
       <StartTask Identifier="task_0">
         <Actions Language="bal"><![CDATA[make it true that application is eligible ; ]]>&#13;<![CDATA[
-set predictor to a predictor based on "neural_insurance.pmml" ;]]></Actions>
+set predictor to a predictor based on 'model name' ;]]></Actions>
       </StartTask>
-      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="Determine Cost Factor" Ordering="Default">
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="Determine Base Cost Factor" Ordering="Default">
         <FinalActions Language="bal"><![CDATA[print "Base cost factor is " + the cost factor of application ; ]]></FinalActions>
         <RuleList>
-          <Package Name="Pricing.Determine Cost Factor"/>
-        </RuleList>
-      </RuleTask>
-      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="Adjust for Past Claim Cost" Ordering="Default">
-        <FinalActions Language="irl"><![CDATA[if ( application.eligible ) {]]>&#13;<![CDATA[
-	java.lang.System.out.println("Surcharge based on past claims cost estimate is " + application.claimCostSurcharge); ]]>&#13;<![CDATA[
-}]]>&#13;<![CDATA[
-else {]]>&#13;<![CDATA[
-	java.lang.System.out.println("Decline application based on past claims cost estimate");]]>&#13;<![CDATA[
-}]]></FinalActions>
-        <RuleList>
-          <Package Name="Pricing.Adjust for Past Claim Cost"/>
+          <Package Name="Pricing.Determine Base Cost Factor"/>
         </RuleList>
       </RuleTask>
       <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="Determine Primary Class Code" Ordering="Default">
@@ -40,21 +29,29 @@ else {]]>&#13;<![CDATA[
           <Package Name="Pricing.Compute Price"/>
         </RuleList>
       </RuleTask>
+      <SubflowTask Identifier="task_2" Uuid="c23dd533-d833-41c1-8fea-bc6ac1810189">
+        <FinalActions Language="irl"><![CDATA[if ( application.eligible ) {]]>&#13;<![CDATA[
+	java.lang.System.out.println("Surcharge based on past claims cost estimate is " + application.claimCostSurcharge); ]]>&#13;<![CDATA[
+}]]>&#13;<![CDATA[
+else {]]>&#13;<![CDATA[
+	java.lang.System.out.println("Decline application based on past claims cost estimate ($" + application.claimCost +")");]]>&#13;<![CDATA[
+}]]></FinalActions>
+      </SubflowTask>
       <StopTask Identifier="task_1"/>
     </TaskList>
     <NodeList>
       <TaskNode Identifier="node_0" Task="task_0"/>
       <TaskNode Identifier="node_1" Task="task_1"/>
-      <TaskNode Identifier="node_3" Task="Determine Cost Factor"/>
-      <TaskNode Identifier="node_4" Task="Adjust for Past Claim Cost"/>
+      <TaskNode Identifier="node_3" Task="Determine Base Cost Factor"/>
       <BranchNode Identifier="node_5"/>
       <TaskNode Identifier="node_2" Task="Determine Primary Class Code"/>
       <TaskNode Identifier="node_9" Task="Compute Price"/>
+      <TaskNode Identifier="node_6" Task="task_2"/>
     </NodeList>
     <TransitionList>
       <Transition Identifier="transition_0" Source="node_0" Target="node_2"/>
-      <Transition Identifier="transition_1" Source="node_4" Target="node_9"/>
-      <Transition Identifier="transition_2" Source="node_5" Target="node_4">
+      <Transition Identifier="transition_1" Source="node_6" Target="node_9"/>
+      <Transition Identifier="transition_2" Source="node_5" Target="node_6">
         <Conditions Language="bal"><![CDATA[driver is new client ]]></Conditions>
       </Transition>
       <Transition Identifier="transition_3" Source="node_3" Target="node_5"/>
@@ -65,40 +62,39 @@ else {]]>&#13;<![CDATA[
   </Body>
   <Resources>
     <ResourceSet Locale="en_US">
-      <Data Name="node_4#width">102.0</Data>
       <Data Name="node_2#height">82.80469</Data>
       <Data Name="node_1#height">18.999926</Data>
-      <Data Name="node_3#height">68.103516</Data>
+      <Data Name="node_3#height">82.80469</Data>
       <Data Name="node_0#height">21.0</Data>
-      <Data Name="node_4#height">82.80469</Data>
       <Data Name="node_9#x">51.0</Data>
       <Data Name="node_5#name">node_6</Data>
       <Data Name="node_9#width">102.0</Data>
-      <Data Name="node_9#y">567.82825</Data>
+      <Data Name="node_9#y">582.5294</Data>
       <Data Name="node_2#name">node_2</Data>
       <Data Name="node_5#height">36.414185</Data>
+      <Data Name="node_6#height">82.80469</Data>
       <Data Name="node_9#height">53.402344</Data>
       <Data Name="node_2#width">102.0</Data>
       <Data Name="node_0#width">21.0</Data>
-      <Data Name="node_3#y">237.85645</Data>
-      <Data Name="node_4#x">89.0</Data>
-      <Data Name="node_4#y">449.72473</Data>
-      <Data Name="node_5#x">50.999985</Data>
-      <Data Name="node_5#y">340.1153</Data>
+      <Data Name="node_3#y">245.20703</Data>
+      <Data Name="node_5#x">51.000015</Data>
+      <Data Name="node_5#y">354.81647</Data>
+      <Data Name="node_6#x">89.0</Data>
       <Data Name="node_5#width">36.414215</Data>
+      <Data Name="node_6#y">464.4259</Data>
       <Data Name="node_0#x">51.0</Data>
       <Data Name="node_0#y">10.5</Data>
       <Data Name="node_1#x">51.000004</Data>
-      <Data Name="node_1#y">654.0294</Data>
+      <Data Name="node_1#y">668.7306</Data>
       <Data Name="node_2#x">51.0</Data>
       <Data Name="node_3#x">51.0</Data>
       <Data Name="node_2#y">112.40234</Data>
       <Data Name="node_1#name">node_2</Data>
       <Data Name="node_3#width">102.0</Data>
-      <Data Name="node_4#name">node_4</Data>
       <Data Name="node_1#width">19.000006</Data>
       <Data Name="node_9#name">node_9</Data>
       <Data Name="node_0#name">node_0</Data>
+      <Data Name="node_6#width">102.0</Data>
       <Data Name="node_3#name">node_3</Data>
     </ResourceSet>
   </Resources>

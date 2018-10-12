@@ -11,6 +11,9 @@
   <referencedVariables variableName="application" variableSetName="variables" direction="OUT">
     <variableSet href="../rules/variables.var#f5a4b3ea-0066-4f2f-abaa-49a0e5486fb8"/>
   </referencedVariables>
+  <referencedVariables variableName="modelName" variableSetName="variables">
+    <variableSet href="../rules/variables.var#f5a4b3ea-0066-4f2f-abaa-49a0e5486fb8"/>
+  </referencedVariables>
   <ruleflow href="../rules/Pricing%20Flow.rfl#52421d0c-8c10-4e99-add2-afe0830ccc87"/>
   <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="InsurancePremium_extractor" validator="Default Validator"/>
   <targetRuleProject href="../../policy-pricing-rules#6a629bb8-c63e-4beb-b9c1-f52ec977fe2f"/>

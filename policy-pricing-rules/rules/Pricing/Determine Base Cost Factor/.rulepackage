@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
-  <name>Determine Cost Factor</name>
+  <name>Determine Base Cost Factor</name>
   <uuid>03a4eea1-95ac-4ae3-bd68-ad59dd485737</uuid>
 </ilog.rules.studio.model.base:RulePackage>

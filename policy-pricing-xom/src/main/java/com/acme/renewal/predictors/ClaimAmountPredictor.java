@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.transform.sax.SAXSource;
@@ -26,19 +27,29 @@ import org.xml.sax.SAXException;
  */
 public class ClaimAmountPredictor {
 
+	static ConcurrentHashMap<String, ClaimAmountPredictor> predictors = new ConcurrentHashMap<String, ClaimAmountPredictor>();
+
 	Evaluator evaluator;
 
-	public static ClaimAmountPredictor CreatePredictor(
-			String pmmlFileName) {
+	public static ClaimAmountPredictor CreatePredictor(String pmmlFileName) {
 		try {
-			return new ClaimAmountPredictor(pmmlFileName);
+			if ((pmmlFileName == null) || pmmlFileName.isEmpty()) {
+				return null;
+			} else {
+				ClaimAmountPredictor predictor = predictors.get(pmmlFileName);
+				if (predictor == null) {
+					predictor = new ClaimAmountPredictor(pmmlFileName);
+					predictors.put(pmmlFileName, predictor);
+				}
+				return predictor;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
 
-	public ClaimAmountPredictor(String pmmlFileName) throws IOException,
+	private ClaimAmountPredictor(String pmmlFileName) throws IOException,
 			SAXException, JAXBException {
 		PMML pmml = createPMMLfromFile(pmmlFileName);
 		evaluator = new NeuralNetworkEvaluator(pmml);
@@ -47,8 +58,8 @@ public class ClaimAmountPredictor {
 	/**
 	 * Evaluate the model for the given input.
 	 */
-	public double evaluate(String gender, int numberOfClaims, String livingArea,
-			double ageOfCar) {
+	public double evaluate(String gender, int numberOfClaims,
+			String livingArea, double ageOfCar) {
 		Object[] args = new Object[4];
 		args[0] = gender;
 		args[1] = (numberOfClaims <= 3) ? "" + numberOfClaims : ">3";
@@ -65,8 +76,8 @@ public class ClaimAmountPredictor {
 		int i = 0;
 		for (InputField inputField : inputFields) {
 			try {
-				FieldValue inputFieldValue =
-						inputField.prepare(arg_values[i++]);
+				FieldValue inputFieldValue = inputField
+						.prepare(arg_values[i++]);
 				arguments.put(inputField.getName(), inputFieldValue);
 			} catch (Exception e) {
 				System.err.println("Error while preparing "
@@ -81,8 +92,8 @@ public class ClaimAmountPredictor {
 
 	protected PMML createPMMLfromFile(String fileName) throws IOException,
 			SAXException, JAXBException {
-		try (InputStream stream =
-				getClass().getClassLoader().getResourceAsStream(fileName)) {
+		try (InputStream stream = getClass().getClassLoader()
+				.getResourceAsStream(fileName)) {
 			InputSource source = new InputSource(stream);
 			source.setPublicId(fileName);
 			SAXSource transformedSource = ImportFilter.apply(source);
@@ -93,8 +104,7 @@ public class ClaimAmountPredictor {
 	public static void main(String args[]) {
 		try {
 			final String pmmlFile = "neural_insurance.pmml";
-			ClaimAmountPredictor predictor =
-					CreatePredictor(pmmlFile);
+			ClaimAmountPredictor predictor = CreatePredictor(pmmlFile);
 			double amount = predictor.evaluate("male", 3, "urban", 10.0);
 			System.out.println("Amount: " + amount);
 		} catch (Exception e) {
