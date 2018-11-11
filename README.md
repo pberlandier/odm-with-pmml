@@ -7,4 +7,4 @@ The predictive model is a simple Neural Network that is defined using [PMML](htt
 
 A quick intro to the sample is provided in [this deck](https://github.com/pberlandier/odm-with-pmml/blob/master/docs/Decisions%20with%20ODM%20and%20Predictive%20Model.pptx).
 
-Please send comments & questions to (pberland@us.ibm.com).
+Please send comments & questions to [Pierre Berlandier](pberland@us.ibm.com).
